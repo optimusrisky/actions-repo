@@ -8,5 +8,3 @@ jobs: # ジョブ　
           echo "Hello, world"
           git log -l
       - uses: actions/checkout@v4 # アクション　2.8節
-        with:
-          fetch-depth: 0
