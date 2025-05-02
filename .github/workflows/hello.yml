@@ -6,5 +6,4 @@ jobs: # ジョブ　
     steps: # ステップ
       - run: | # シェルコマンド
           echo "Hello, world"
-          git log -l
       - uses: actions/checkout@v4 # アクション　2.8節
