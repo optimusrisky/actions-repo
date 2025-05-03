@@ -4,8 +4,8 @@ jobs: # ジョブ　
   hello: # ジョブID
     runs-on: ubuntu-latest # ランナー(実行環境)　2.7節
     steps: # ステップ
-      - uses: actions/checkout@v4 # アクション　2.8節
       - run: | # シェルコマンド
           echo "Hello, world"
-          git log -1
       - uses: actions/checkout@v4 # アクション　2.8節
+      # checkout は、リポジトリの内容をダウンロードするためのアクション
+      # これがないと、リポジトリの内容を取得できない
