@@ -3,8 +3,13 @@ on:
   workflow_dispatch: # 手動実行
     inputs:
       greeting:
-        default: Hello
-        type: string
+        # default: Hello
+        # type: string
+        type: choice
+        options:
+          - Hello
+          - Hi
+          - Hey
         required: true
         description: A Cheerful word
 jobs:
