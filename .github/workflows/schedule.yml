@@ -1,0 +1,10 @@
+name: Schedule
+on:
+  schedule:
+    - cron: "*/15 * * * *" # 15分ごとに起動する (cron式で記述)
+    # 分単位で日時指定は可能だが、時間ぴったりに起動するとは限らない -> 時間にシビアな処理は不向き
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: date
