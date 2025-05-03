@@ -4,6 +4,7 @@ on:
     inputs:
       greeting:
         default: Hello
+        type: string
         required: true
         description: A Cheerful word
 jobs:
