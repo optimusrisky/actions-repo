@@ -1,0 +1,13 @@
+name: Contexts
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }} # コンテキストの値を環境変数へセット
+    steps:
+      - run: echo "${GITHUB_ACTOR}" # コンテキストではなくデフォルト環境変数を指定
+      - run: echo "${{ github.actor }}" # githubコンテキストの参照
+      # ↑アンチパターン -> コンテキストによっては特殊文字が含まれ、シェルコマンドの実行に意図しない影響を与える恐れがあるため。
+      # 回避するためには一旦コンテキストを環境変数へ渡してクォートする(中間環境変数)
+      - run: echo "${ACTOR}" # 環境変数経由でコンテキストのプロパティを参照
